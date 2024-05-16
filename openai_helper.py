@@ -2,7 +2,7 @@ import openai
 import logging
 
 # Replace this with your actual OpenAI API key
-OPENAI_API_KEY = 'sk-proj-hLZcpDjMMHxuMxD6Zv6NT3BlbkFJR6lIzCllwF5qzs68WD0e'
+OPENAI_API_KEY = 'sk'
 openai.api_key = OPENAI_API_KEY
 logger = logging.getLogger(__name__)
 
