@@ -1,0 +1,31 @@
+yaml
+version: '3.8'
+
+services:
+  redis:
+    image: 'redis:latest'
+    ports:
+      - '6379:6379'
+
+  celery-worker:
+    build: .
+    command: celery -A tasks worker --loglevel=info
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+
+  flower:
+    build: .
+    command: celery -A tasks flower --port=5555
+    ports:
+      - '5555:5555'
+    depends_on:
+      - redis
+
+  fastapi:
+    build: .
+    ports:
+      - '8000:8000'
+    depends_on:
+      - redis

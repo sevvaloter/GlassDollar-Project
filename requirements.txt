@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+celery
+redis
+beautifulsoup4
+requests
+openai
+numpy
+json
+plaintext
+fastapi
+flower
+docker
+
+
